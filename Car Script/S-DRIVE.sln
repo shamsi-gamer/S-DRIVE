@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Car Script", "Car Script.csproj", "{1A0D612B-8573-48A8-9ECB-738C4A1DFFF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A0D612B-8573-48A8-9ECB-738C4A1DFFF3}.Debug|x64.ActiveCfg = Debug|x64
+		{1A0D612B-8573-48A8-9ECB-738C4A1DFFF3}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {253A3724-BFEF-4DEF-B7D2-80D01C20E98A}
+	EndGlobalSection
+EndGlobal
