@@ -13,13 +13,13 @@ namespace IngameScript
     {
         public void Main(string arg, UpdateType update)
         {
-            if (ProcessArg(arg))
-                return;
+            //if (ProcessArg(arg))
+            //    return;
 
 
-            var baseMass = 
-                m_cockpit != null 
-                ? m_cockpit.CalculateShipMass().BaseMass 
+            var baseMass =
+                m_cockpit != null
+                ? m_cockpit.CalculateShipMass().BaseMass
                 : 0;
 
 
@@ -31,8 +31,8 @@ namespace IngameScript
                 Update10(baseMass);
 
 
-            if ((update & UpdateType.Update100) != 0)
-                Update100();
+            //if ((update & UpdateType.Update100) != 0)
+            //    Update100();
 
 
 

@@ -52,20 +52,20 @@ namespace IngameScript
 
             public override void Draw(ref MySpriteDrawFrame frame, Program prog) 
             {
-                //prog.Echo("fX = " + fX);
-                //prog.Echo("fY = " + fY);
-                //prog.Echo("fW = " + fW);
-                //prog.Echo("fH = " + fH);
+                prog.Echo("fX = " + fX);
+                prog.Echo("fY = " + fY);
+                prog.Echo("fW = " + fW);
+                prog.Echo("fH = " + fH);
 
 
-                FillRect(ref frame, 0, 51.2f, 200, 200, Color.White);
-                //FillSemiCircle(
-                //    frame, 
-                //    fX + fW/2, 
-                //    fY + fH/2, 
-                //    Math.Min(fW, fH)/2,
-                //    BackColor,
-                //    Tau/4);
+                FillRect(ref frame, fX, fY, 100, 100, Color.White);
+                FillSemiCircle(
+                    ref frame,
+                    fX + fW/2,
+                    fY + fH/2,
+                    Math.Min(fW, fH)/2,
+                    BackColor,
+                    Tau/4);
 
 
                 //var angleSide = right ? -1 : 1;

@@ -81,7 +81,12 @@ namespace IngameScript
             public void Update()
             {
                 foreach (var c in Controls)
+                { 
                     c.Update();
+
+                    c.fX += Viewport.X;
+                    c.fY += Viewport.Y;
+                }
             }
 
 
@@ -93,25 +98,15 @@ namespace IngameScript
                 var w = Viewport.Width;
                 var h = Viewport.Height;
 
-
-                prog.Echo("x = " + x);
-                prog.Echo("y = " + y);
-                prog.Echo("w = " + w);
-                prog.Echo("h = " + h);
-
-
                 var frame = Surface.DrawFrame();
  
                 //if (m_flag = !m_flag)
                 //frame.Add(new MySprite());
 
-                ClearClip(ref frame);                
-
                 FillRect(ref frame, x, y, w/2, h, Color.Green);
 
                 foreach (var c in Controls)
                     c.Draw(ref frame, prog);
-
 
                 frame.Dispose();
             }
