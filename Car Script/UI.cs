@@ -43,24 +43,53 @@ namespace IngameScript
             m_displays.Add(m_display2 = new Display(m_cockpit, 2));
 
             InitDisplay1();
+            InitDisplay2();
         }
 
 
 
         void InitDisplay1()
         {   
-            var x1 = m_display1.Viewport.X;
-            var y1 = m_display1.Viewport.Y;
-            var w1 = m_display1.Viewport.Width;
-            var h1 = m_display1.Viewport.Height;
+            var x = m_display1.Viewport.X;
+            var y = m_display1.Viewport.Y;
+            var w = m_display1.Viewport.Width;
+            var h = m_display1.Viewport.Height;
 
-            var szSpeed = Math.Min(w1, h1)*2/3f;
+            var szSpeed = Math.Min(w, h)*1/3;
 
             m_display1.Controls.Add(new Gauge(
-                (w1-szSpeed)/2, 
-                (h1-szSpeed)/2, 
+                w/4-szSpeed/2, 
+                h/4-szSpeed/2, 
                 szSpeed, 
-                szSpeed));
+                szSpeed,
+                0, 
+                0));
+
+            m_display1.Controls.Add(new Gauge(
+                (w-szSpeed)/2, 
+                (h-szSpeed)/2, 
+                szSpeed, 
+                szSpeed,
+                0,
+                Tau/2));
+
+            m_display1.Controls.Add(new Gauge(
+                w*3/4f-szSpeed/2, 
+                h*3/4f-szSpeed/2, 
+                szSpeed, 
+                szSpeed,
+                Tau/2,
+                Tau));
+        }
+
+
+
+        void InitDisplay2()
+        {   
+            var x = m_display1.Viewport.X;
+            var y = m_display1.Viewport.Y;
+            var w = m_display1.Viewport.Width;
+            var h = m_display1.Viewport.Height;
         }
 
 

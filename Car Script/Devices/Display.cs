@@ -31,9 +31,9 @@ namespace IngameScript
 
             public Display(IMyTextSurfaceProvider provider, int index)
             {
+                Index    = index;
                 Surface  = provider.GetSurface(Index);
                 Provider = provider;
-                Index    = index;
         
                 Init();
             }
@@ -42,9 +42,9 @@ namespace IngameScript
 
             public Display(IMyTextSurface surface)
             {
+                Index    = -1;
                 Surface  = surface;
                 Provider = null;
-                Index    = -1;
 
                 Init();
             }
@@ -103,7 +103,7 @@ namespace IngameScript
                 //if (m_flag = !m_flag)
                 //frame.Add(new MySprite());
 
-                FillRect(ref frame, x, y, w/2, h, Color.Green);
+                FillRect(ref frame, x, y, w, h, Color.Black);
 
                 foreach (var c in Controls)
                     c.Draw(ref frame, prog);

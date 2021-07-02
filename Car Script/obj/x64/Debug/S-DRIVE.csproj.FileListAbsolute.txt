@@ -117,3 +117,4 @@ C:\Users\shamsi\Documents\GitHub\S-DRIVE\Car Script\obj\x64\Debug\S-DRIVE.csproj
 C:\Users\shamsi\Documents\GitHub\S-DRIVE\Car Script\obj\x64\Debug\S-DRIVE.csproj.CopyComplete
 C:\Users\shamsi\Documents\GitHub\S-DRIVE\Car Script\obj\x64\Debug\Car Script.exe
 C:\Users\shamsi\Documents\GitHub\S-DRIVE\Car Script\obj\x64\Debug\Car Script.pdb
+C:\Users\shamsi\Documents\GitHub\S-DRIVE\Car Script\obj\x64\Debug\S-DRIVE.csproj.AssemblyReference.cache

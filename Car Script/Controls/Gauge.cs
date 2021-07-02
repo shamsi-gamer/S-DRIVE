@@ -38,34 +38,28 @@ namespace IngameScript
                          TextColor = Color.Black;
 
 
-            public Gauge(float x, float y, float w, float h)
+            public Gauge(float x, float y, float w, float h, float gaugeStartAngle, float gaugeEndAngle, float scaleStartAngle = float.NaN, float scaleEndAngle = float.NaN)
                 : base(x, y, w, h)
             {
-                GaugeStartAngle = 0;
-                GaugeEndAngle   = 0;
+                GaugeStartAngle = gaugeStartAngle;
+                GaugeEndAngle   = gaugeEndAngle;
 
-                ScaleStartAngle = 0;
-                ScaleEndAngle   = 0;
+                ScaleStartAngle = OK(scaleStartAngle) ? scaleStartAngle : GaugeStartAngle;
+                ScaleEndAngle   = OK(scaleEndAngle)   ? scaleEndAngle   : GaugeEndAngle;
             }
 
 
 
             public override void Draw(ref MySpriteDrawFrame frame, Program prog) 
             {
-                prog.Echo("fX = " + fX);
-                prog.Echo("fY = " + fY);
-                prog.Echo("fW = " + fW);
-                prog.Echo("fH = " + fH);
-
-
-                FillRect(ref frame, fX, fY, 100, 100, Color.White);
-                FillSemiCircle(
+                FillPie(
                     ref frame,
                     fX + fW/2,
                     fY + fH/2,
                     Math.Min(fW, fH)/2,
                     BackColor,
-                    Tau/4);
+                    GaugeStartAngle,
+                    GaugeEndAngle);
 
 
                 //var angleSide = right ? -1 : 1;

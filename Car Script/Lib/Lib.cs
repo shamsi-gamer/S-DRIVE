@@ -137,5 +137,8 @@ namespace IngameScript
                    block != null
                 && block.IsWorking;
         }
+
+
+        static bool OK(float f) => !float.IsNaN(f);
     }
 }

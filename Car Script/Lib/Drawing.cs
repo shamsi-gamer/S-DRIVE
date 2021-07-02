@@ -35,7 +35,7 @@ namespace IngameScript
         }
         
         
-        static void DrawTexture(ref MySpriteDrawFrame frame, string texture, Vector2 pos, Vector2 size, Color c, float rotation = 0)
+        static void DrawTexture(ref MySpriteDrawFrame frame, string texture, Vector2 pos, Vector2 size, Color color, float rotation = 0)
         {
             frame.Add(new MySprite()
             {
@@ -43,7 +43,7 @@ namespace IngameScript
                 Data            = texture,
                 Position        = pos + size/2,
                 Size            = size,
-                Color           = c,
+                Color           = color,
                 Alignment       = TextAlignment.CENTER,
                 RotationOrScale = rotation
             });
@@ -97,18 +97,31 @@ namespace IngameScript
         }
 
 
-        void DrawCircle(ref MySpriteDrawFrame frame, Vector2 p, float r, Color color)
+        static void DrawCircle(ref MySpriteDrawFrame frame, Vector2 p, float r, Color color)
         {
             DrawTexture(ref frame, "CircleHollow", p.X - r, p.Y - r, r * 2, r * 2, color);
         }
 
 
-        void DrawCircle(ref MySpriteDrawFrame frame, float x, float y, float r, Color color)
+        static void DrawCircle(ref MySpriteDrawFrame frame, float x, float y, float r, Color color)
         {
             DrawTexture(ref frame, "CircleHollow", x - r, y - r, r * 2, r * 2, color);
         }
 
 
+        static void FillPie(ref MySpriteDrawFrame frame, float x, float y, float r, Color color, float startAngle, float endAngle)
+        {
+            if (startAngle == endAngle)
+                FillCircle(ref frame, x, y, r, color);
+
+            else
+            { 
+                FillSemiCircle(ref frame, x, y, r, color,         startAngle);
+                FillSemiCircle(ref frame, x, y, r, color, Tau/2 + endAngle);
+            }
+        }
+
+        
         static void DrawLine(ref MySpriteDrawFrame frame, Vector2 p1, Vector2 p2, Color col, float width = 1)
         {
             var dp    = p2 - p1;
